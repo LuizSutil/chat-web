@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="chat.css">
+		<title> Ethereal Chat</title>
+	</head>
+<body class="body">
+	<div class="chatbox">
+		<div class="header">
+			<h2 class="heading">Atendimento on-line</h2>
+		</div>
+		<div id="sendHere" class="textbox"></div>
+		
+		<div class="msgbox">
+			<input id='typebox' type="text" class="typebox"> </input>
+			<button id="button" type="button" class="typebtn">Enviar</button>
+		</div>
+
+	</div>
+
+		<script type="text/javascript"> 
+
+
+		mensagens = []
+
+		function mandarMsgn (){
+		
+
+			for (let i = 0; i < mensagens.length; i++) {
+			    
+				const msg = mensagens[i]
+				msg.className='paraname'
+				var div = document.createElement('div');
+				div.className= 'msgReq'
+				div.innerHTML= `<p>${msg}</p>`
+
+
+			}	
+
+			var element = document.getElementById("sendHere")
+
+			element.appendChild(div)
+
+			
+		}
+
+		button.addEventListener("click", function(event){
+			mensagens.push(document.getElementById("typebox").value)
+			mandarMsgn()
+		})
+		
+
+		</script>
+</body> 
+</html>
